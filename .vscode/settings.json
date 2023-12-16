@@ -1,3 +1,7 @@
 {
-    "rust-analyzer.check.allTargets": false
+    "rust-analyzer.check.allTargets": false,
+    "rust-analyzer.cargo.target": "${workspaceFolder}/target/armv7a-vexos-eabi.json",
+    "rust-analyzer.cargo.extraArgs": [
+        "-Zbuild-std=core,alloc,compiler_builtins"
+    ]
 }
