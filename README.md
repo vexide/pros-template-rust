@@ -1,17 +1,92 @@
 # VEX V5 Template for the Rust Programming Language
 
+## Getting Started (macOS)
+
+Run the following terminal commands to set up your Mac for development.
+
+Install Homebrew, a package manager for macOS which is needed to configure your computer with the necessary development tools:
+
+```console
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Under the header "Next Steps", Homebrew may prompt you to run commands to complete the installation.
+
+Install dependencies and The Rust Programming Language:
+
+```console
+brew install rustup osx-cross/arm/arm-gcc-bin purduesigbots/pros/pros-cli
+
+rustup-init -y --default-toolchain nightly
+```
+
+Close and reopen the terminal, and install pros-rs:
+
+```console
+rustup component add rust-src
+cargo install cargo-pros
+```
+
 ## Getting Started (Windows)
 
-### Install Rust
+Install Rust by following the instructions on <https://rustup.rs/>. Configure your installation when prompted, installing a **nightly** toolchain and keeping other default values.
 
-Install Rust by following the instructions on https://rustup.rs/. You may be prompted to install Visual Studio during the installation. When prompted which action to choose, customize your installation. Choose a `nightly` toolchain, and keep other default values.
+Download and run the [ARM EABI Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads) installer, choosing the first `.exe` file under the header `arm-none-eabi`.
 
-![Choose a nightly toolchain](rustup.png)
+Install Python from <https://python.org/>.
 
-### Install pros-rs
+Run the following commands in Powershell to install pros-rs:
 
-Pros-rs is a toolchain for developing VEX robots in Rust. Start by installing the [ARM EABI Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads), downloading the first `exe` installer file under the header **arm-none-eabi**. This is a very slow download and might take up to 15 minutes. This tool is required to build the robot code. You will need admin permissions to run the installer.
+```
+python3 -m pip install --user pros-cli
+rustup component add rust-src
+cargo install cargo-pros
+```
 
-_Make sure to check "Add path to environment variable"!_
+## Getting Started (Fedora Linux)
 
-![ARM Installer](arminstaller.png)
+Run the following terminal commands to install dependencies and set up your PC for development.
+
+```console
+sudo dnf install rustup python3-pip arm-none-eabi-gcc-cs gcc
+
+rustup-init -y --default-toolchain nightly
+pip install --user pros-cli
+```
+
+Close and reopen the terminal, and install pros-rs:
+
+```console
+rustup component add rust-src
+cargo install cargo-pros
+```
+
+## Compiling and uploading to a VEX V5 robot
+
+Use the Cargo PROS terminal utility to compile this pros-rs project.
+
+```console
+cargo pros build
+```
+
+The separate `pros` command is used to upload. Plug in your VEX robot brain via USB and run the following command to upload to program slot 1:
+
+```console
+pros upload --target v5 --slot 1 ./target/armv7a-vexos-eabi/debug/pros-template-rust.bin
+```
+
+## Debugging in the pros-rs simulator
+
+If you have PROS Simulator installed, you can use it to run this project without real VEX hardware for debugging and development purposes. Start by adding the WebAssembly Rust target:
+
+```console
+rustup target add wasm32-unknown-unknown
+```
+
+Build the project for the simulator by running:
+
+```console
+cargo pros build -s
+```
+
+Then open this project in PROS Simulator to run and debug the robot code.
