@@ -1,5 +1,16 @@
 # VEX V5 Template for the Rust Programming Language
 
+## Table of Contents
+
+- [VEX V5 Template for the Rust Programming Language](#vex-v5-template-for-the-rust-programming-language)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started (macOS)](#getting-started-macos)
+  - [Getting Started (Windows)](#getting-started-windows)
+  - [Getting Started (Fedora Linux)](#getting-started-fedora-linux)
+  - [Compiling and uploading to a VEX V5 robot](#compiling-and-uploading-to-a-vex-v5-robot)
+  - [Debugging in the pros-rs simulator](#debugging-in-the-pros-rs-simulator)
+
+
 ## Getting Started (macOS)
 
 Run the following terminal commands to set up your Mac for development.
