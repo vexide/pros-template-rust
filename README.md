@@ -7,6 +7,7 @@
   - [Getting Started (macOS)](#getting-started-macos)
   - [Getting Started (Windows)](#getting-started-windows)
   - [Getting Started (Fedora Linux)](#getting-started-fedora-linux)
+  - [Getting Started (Debian/Ubuntu linux)](#getting-started-debianubuntu-linux)
   - [Compiling and uploading to a VEX V5 robot](#compiling-and-uploading-to-a-vex-v5-robot)
   - [Debugging in the pros-rs simulator](#debugging-in-the-pros-rs-simulator)
 
