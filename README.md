@@ -72,6 +72,37 @@ rustup component add rust-src
 cargo install cargo-pros
 ```
 
+## Getting Started (Debian/Ubuntu linux)
+
+If you don't have rustup:
+```console
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup toolchain install nightly
+sudo apt install python3-pip
+pip install --user pros-cli
+```
+
+If you do have rustup:
+```console
+rustup update
+rustup toolchain install nightly
+rustup override set nightly
+sudo apt install python3-pip
+pip install --user pros-cli
+```
+
+Install pip:
+```console
+sudo apt install python3-pip
+```
+
+Close and reopen the terminal, and install pros-rs:
+
+```console
+rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
+cargo install cargo-pros
+```
+
 ## Compiling and uploading to a VEX V5 robot
 
 Use the Cargo PROS terminal utility to compile this pros-rs project.
