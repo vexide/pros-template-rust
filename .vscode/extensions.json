@@ -1,6 +1,5 @@
 {
     "recommendations": [
-        "yahyabatulu.vscode-markdown-alert",
         "rust-lang.rust-analyzer",
     ]
 }

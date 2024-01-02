@@ -7,7 +7,7 @@ use pros::prelude::*;
 
 /// Store robot state that will be used throughout the program.
 struct VexRobot {
-    controller: Controller,
+    drive_motor: Motor,
 }
 
 impl VexRobot {
@@ -15,19 +15,27 @@ impl VexRobot {
     /// This function is run by PROS as soon as the robot program is selected.
     pub fn new() -> Self {
         Self {
-            controller: Controller::Master,
+            drive_motor: Motor::new(1, BrakeMode::Brake).unwrap(),
         }
     }
 }
 
-impl Robot for VexRobot {
-    /// Runs when the robot is enabled.
+impl SyncRobot for VexRobot {
+    /// Runs when the robot is enabled in autonomous mode.
+    fn auto(&mut self) -> pros::Result {
+        self.drive_motor.set_output(1.0)?;
+        sleep(Duration::from_secs(2));
+        self.drive_motor.set_output(0.0)?;
+        Ok(())
+    }
+
+    /// Runs when the robot is enabled in driver control mode.
     fn opcontrol(&mut self) -> pros::Result {
         loop {
-            let input = self.controller.state();
-            let Joysticks { left, right } = input.joysticks;
+            let joysticks = Controller::Master.state().joysticks;
 
-            println!("Speed %: {:?}, Turn %: {:?}", left.y, right.x);
+            println!("Speed %: {:?}", joysticks.left.y);
+            self.drive_motor.set_output(joysticks.left.y)?;
 
             sleep(Duration::from_millis(20));
         }
@@ -35,4 +43,4 @@ impl Robot for VexRobot {
 }
 
 // Register the robot with PROS so that its methods will be called.
-robot!(VexRobot, VexRobot::new());
+sync_robot!(VexRobot, VexRobot::new());

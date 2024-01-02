@@ -7,8 +7,11 @@
   - [Getting Started (macOS)](#getting-started-macos)
   - [Getting Started (Windows)](#getting-started-windows)
   - [Getting Started (Fedora Linux)](#getting-started-fedora-linux)
-  - [Compiling and uploading to a VEX V5 robot](#compiling-and-uploading-to-a-vex-v5-robot)
-  - [Debugging in the pros-rs simulator](#debugging-in-the-pros-rs-simulator)
+  - [Development](#development)
+    - [Compiling and uploading to a VEX V5 robot](#compiling-and-uploading-to-a-vex-v5-robot)
+    - [Debugging in the pros-rs simulator](#debugging-in-the-pros-rs-simulator)
+    - [Using smart editing features](#using-smart-editing-features)
+  - [Troubleshooting](#troubleshooting)
 
 
 ## Getting Started (macOS)
@@ -72,7 +75,9 @@ rustup component add rust-src
 cargo install cargo-pros
 ```
 
-## Compiling and uploading to a VEX V5 robot
+## Development
+
+### Compiling and uploading to a VEX V5 robot
 
 Use the Cargo PROS terminal utility to compile this pros-rs project.
 
@@ -86,7 +91,7 @@ The separate `pros` command is used to upload. Plug in your VEX robot brain via 
 pros upload --target v5 --slot 1 ./target/armv7a-vexos-eabi/debug/pros-template-rust.bin
 ```
 
-## Debugging in the pros-rs simulator
+### Debugging in the pros-rs simulator
 
 If you have PROS Simulator installed, you can use it to run this project without real VEX hardware for debugging and development purposes. Start by adding the WebAssembly Rust target:
 
@@ -101,3 +106,11 @@ cargo pros build -s
 ```
 
 Then open this project in PROS Simulator to run and debug the robot code.
+
+### Using smart editing features
+
+After building the project for the first time, developers using Visual Studio Code and rust-analyzer have access to smart editing features like Intellisense and code analysis. By default, rust-analyzer will check the project's code for errors when it is saved.
+
+## Troubleshooting
+
+- If you experience issues with Intellisense, make sure you've [built the project](#compiling-and-uploading-to-a-vex-v5-robot) at least once!
