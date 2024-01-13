@@ -144,3 +144,4 @@ After building the project for the first time, developers using Visual Studio Co
 ## Troubleshooting
 
 - If you experience issues with Intellisense, make sure you've [built the project](#compiling-and-uploading-to-a-vex-v5-robot) at least once!
+- If you get the error `TypeError: <flag 'BrainFlags'> has no members defined` when using the third party `pros upload` command, you need to downgrade Python to v3.9
