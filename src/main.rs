@@ -3,7 +3,7 @@
 
 use core::time::Duration;
 
-use pros::prelude::*;
+use pros::{devices::Controller, prelude::*};
 
 /// Store robot state that will be used throughout the program.
 struct VexRobot {
@@ -13,9 +13,9 @@ struct VexRobot {
 impl VexRobot {
     /// Create subsystems and set up anything that will be used throughout the program.
     /// This function is run by PROS as soon as the robot program is selected.
-    pub fn new() -> Self {
+    pub fn new(peripherals: Peripherals) -> Self {
         Self {
-            drive_motor: Motor::new(1, BrakeMode::Brake).unwrap(),
+            drive_motor: Motor::new(peripherals.port_1, BrakeMode::Brake).unwrap(),
         }
     }
 }
@@ -43,4 +43,4 @@ impl SyncRobot for VexRobot {
 }
 
 // Register the robot with PROS so that its methods will be called.
-sync_robot!(VexRobot, VexRobot::new());
+sync_robot!(VexRobot, VexRobot::new(Peripherals::take().unwrap()));

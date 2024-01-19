@@ -48,12 +48,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "doc-comment"
-version = "0.3.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fea41bba32d969b513997752735605054bc0dfa92b4c56bf1189f2e174be7a10"
-
-[[package]]
 name = "futures"
 version = "0.3.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -146,6 +140,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "302d7ab3130588088d277783b1e2d2e10c9e9e4a16dd9050e6ec93fb3e7048f4"
 
 [[package]]
+name = "libc-print"
+version = "0.1.22"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c17f111e2175c779daaf5e89fe3a3b0776b0adec218bc1159c56e4d3f58032f5"
+dependencies = [
+ "libc",
+]
+
+[[package]]
 name = "lock_api"
 version = "0.4.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -199,15 +202,16 @@ dependencies = [
 
 [[package]]
 name = "pros"
-version = "0.6.0"
+version = "0.7.0-pre.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "993613c6970cdd5cc7bc1d6c4dcca4c42b8548a82db45f761ad22f8bd3f73c31"
+checksum = "267dab1de922e26512453f2550470d6ba8c7305176844b8b7841bc5846a49316"
 dependencies = [
  "async-task",
  "dlmalloc",
  "futures",
  "hashbrown",
  "lazy_static",
+ "libc-print",
  "no_std_io",
  "pros-sys",
  "slab",
@@ -218,9 +222,9 @@ dependencies = [
 
 [[package]]
 name = "pros-sys"
-version = "0.4.0"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5deab65a5ecf10b5a7c277f4619b28ac43b1dd3dccdf682d7258f81304bfbb4e"
+checksum = "c853f01d01978d96cd6444d8bf808c2aae0f63e285d1a1b4f65021adf3d927b4"
 dependencies = [
  "cfg-if",
 ]
@@ -258,24 +262,23 @@ dependencies = [
 
 [[package]]
 name = "snafu"
-version = "0.7.5"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e4de37ad025c587a29e8f3f5605c00f70b98715ef90b9061a815b9e59e9042d6"
+checksum = "d342c51730e54029130d7dc9fd735d28c4cd360f1368c01981d4f03ff207f096"
 dependencies = [
- "doc-comment",
  "snafu-derive",
 ]
 
 [[package]]
 name = "snafu-derive"
-version = "0.7.5"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "990079665f075b699031e9c08fd3ab99be5029b96f3b78dc0709e8f77e4efebf"
+checksum = "080c44971436b1af15d6f61ddd8b543995cf63ab8e677d46b00cc06f4ef267a0"
 dependencies = [
  "heck",
  "proc-macro2",
  "quote",
- "syn 1.0.109",
+ "syn",
 ]
 
 [[package]]
@@ -291,17 +294,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6980e8d7511241f8acf4aebddbb1ff938df5eebe98691418c4468d0b72a96a67"
 dependencies = [
  "lock_api",
-]
-
-[[package]]
-name = "syn"
-version = "1.0.109"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
-dependencies = [
- "proc-macro2",
- "quote",
- "unicode-ident",
 ]
 
 [[package]]
@@ -350,5 +342,5 @@ checksum = "9ce1b18ccd8e73a9321186f97e46f9f04b778851177567b1975109d26a08d2a6"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.45",
+ "syn",
 ]
