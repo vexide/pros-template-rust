@@ -6,4 +6,5 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-pros = "0.7.0"
+num-traits = { version = "0.2", default-features = false }
+pros = { git = "https://github.com/vexide/pros-rs.git", branch = "main" }
