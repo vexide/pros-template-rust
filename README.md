@@ -127,7 +127,7 @@ Use the Cargo PROS terminal utility to compile this pros-rs project.
 cargo pros build
 ```
 
-The separate `pros` command is used to upload. Plug in your VEX robot brain via USB and run the following command to upload to program slot 1:
+The separate `pros` command is used to upload. Plug in your powered VEX robot brain via USB and run the following command to upload to program slot 1. If you changed the package name when setting up this template, you may need to adapt the name of the `.bin` file.
 
 ```console
 pros upload --target v5 --slot 1 ./target/armv7a-vexos-eabi/debug/pros-template-rust.bin
