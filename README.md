@@ -4,6 +4,7 @@
 
 - [VEX V5 Template for the Rust Programming Language](#vex-v5-template-for-the-rust-programming-language)
   - [Table of Contents](#table-of-contents)
+  - [Using This Template](#using-this-template)
   - [Getting Started (macOS)](#getting-started-macos)
   - [Getting Started (Windows)](#getting-started-windows)
   - [Getting Started (Fedora Linux)](#getting-started-fedora-linux)
@@ -13,6 +14,17 @@
     - [Debugging in the pros-rs simulator](#debugging-in-the-pros-rs-simulator)
     - [Using smart editing features](#using-smart-editing-features)
   - [Troubleshooting](#troubleshooting)
+
+## Using This Template
+
+To generate a project using this template, click the "Use this template" button in the upper right corner of the GitHub repository. Choose an appropriate name and clone the new repository using Git. Finally, update the package name in `Cargo.toml`:
+
+```toml
+[package]
+name = "my-vex-robot"
+version = "0.1.0"
+edition = "2021"
+```
 
 
 ## Getting Started (macOS)
@@ -139,7 +151,7 @@ Then open this project in PROS Simulator to run and debug the robot code.
 
 ### Using smart editing features
 
-After building the project for the first time, developers using Visual Studio Code and rust-analyzer have access to smart editing features like Intellisense and code analysis. By default, rust-analyzer will check the project's code for errors when it is saved.
+Developers using Visual Studio Code with the rust-analyzer extension have access to smart editing features like Intellisense and code analysis. By default, rust-analyzer will check the project for errors when it is saved.
 
 ## Troubleshooting
 
