@@ -147,8 +147,9 @@ dependencies = [
 
 [[package]]
 name = "pros"
-version = "0.8.0"
-source = "git+https://github.com/vexide/pros-rs.git?branch=main#12b9941250be00635d7313799876a520e308e477"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5278913d191de61e36131d09682a3500b0040d0b9ca9e4cf93ac3604294a21c8"
 dependencies = [
  "pros-async",
  "pros-core",
@@ -160,8 +161,9 @@ dependencies = [
 
 [[package]]
 name = "pros-async"
-version = "0.1.0"
-source = "git+https://github.com/vexide/pros-rs.git?branch=main#12b9941250be00635d7313799876a520e308e477"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ae4e9752bd0469b53e9fbf230d70fa50fe06aaebd0c73f33ce6be91d494e9cd0"
 dependencies = [
  "async-task",
  "pros-core",
@@ -171,8 +173,9 @@ dependencies = [
 
 [[package]]
 name = "pros-core"
-version = "0.1.0"
-source = "git+https://github.com/vexide/pros-rs.git?branch=main#12b9941250be00635d7313799876a520e308e477"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1ffffd07bc988a8069bcd584ae080f5cdaafabfd72224e5af326815853155729"
 dependencies = [
  "dlmalloc",
  "no_std_io",
@@ -183,8 +186,9 @@ dependencies = [
 
 [[package]]
 name = "pros-devices"
-version = "0.1.0"
-source = "git+https://github.com/vexide/pros-rs.git?branch=main#12b9941250be00635d7313799876a520e308e477"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cfa127db9fe15edb9d84c890705a580486bd9df4fca14aa8a0ab2dd585ecd156"
 dependencies = [
  "bitflags",
  "no_std_io",
@@ -196,7 +200,8 @@ dependencies = [
 [[package]]
 name = "pros-math"
 version = "0.1.0"
-source = "git+https://github.com/vexide/pros-rs.git?branch=main#12b9941250be00635d7313799876a520e308e477"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e29e3b569ede2da48b1b3d68b47999d7aae5c7e77e492a8eb978345a62bdefed"
 dependencies = [
  "num",
  "pros-core",
@@ -204,8 +209,9 @@ dependencies = [
 
 [[package]]
 name = "pros-panic"
-version = "0.1.0"
-source = "git+https://github.com/vexide/pros-rs.git?branch=main#12b9941250be00635d7313799876a520e308e477"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "850e3333dc93c6bd21d5eba6f6aeb246a457acb904b237772c7bb09e7cae4ab3"
 dependencies = [
  "pros-core",
  "pros-devices",
@@ -214,8 +220,9 @@ dependencies = [
 
 [[package]]
 name = "pros-sys"
-version = "0.7.0"
-source = "git+https://github.com/vexide/pros-rs.git?branch=main#12b9941250be00635d7313799876a520e308e477"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "38c3d6abfe5ecd22c64c1cb34ffbc68ab2df8ef222c075f4341cb8125ccbaa45"
 dependencies = [
  "cfg-if",
 ]

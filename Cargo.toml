@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 num-traits = { version = "0.2", default-features = false }
-pros = { git = "https://github.com/vexide/pros-rs.git", branch = "main" }
+pros = "0.9.0"
